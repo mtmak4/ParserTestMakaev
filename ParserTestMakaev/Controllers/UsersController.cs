@@ -21,15 +21,15 @@ namespace ParserTestMakaev.API.Controllers
            
         }
         
-        [HttpGet("editname/{id}/{newName}")]
-        public async Task<ActionResult<IEnumerable<User>>> EditName(int id, string newName)
+        [HttpGet("editUser/{id}/{param}/{newValue}")]
+        public async Task<ActionResult<IEnumerable<User>>> EditName(int id, string param, object newValue)
         {
             User user = db.Users.FirstOrDefault(x => x.Id == id);
             if (user == null)
             {
                 return NotFound();
             }
-            user.Name = newName;
+            user[param] = newValue;
             await db.SaveChangesAsync();
             return await db.Users.ToListAsync();
         }
