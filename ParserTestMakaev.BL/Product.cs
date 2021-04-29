@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace ParserTestMakaev.BL
 {
-    public static class TaskStatus
+  public  class Product
     {
-        public  enum Status { NotStarted, Processed, Done,Canceled,Disabled }
-
+        public int Id { get; set; }
+        public string Price { get; set; }
+        public string Title { get; set; }
     }
 }

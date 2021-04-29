@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace ParserTestMakaev.BL
 {
-    public class User : IGettingClassProperty
+    public class User 
     {
         public int Id { get; set; }
         public string Surname { get; set; }
