@@ -20,16 +20,98 @@ namespace ParserTestMakaev.API.Controllers
             db = context;
            
         }
-        
-        [HttpGet("editUser/{id}/{param}/{newValue}")]
-        public async Task<ActionResult<IEnumerable<User>>> EditName(int id, string param, object newValue)
+
+        [HttpGet("editname/{id}/{param}/{newValue}")]
+        public async Task<ActionResult<IEnumerable<User>>> EditName(int id, string param,string newValue)
         {
             User user = db.Users.FirstOrDefault(x => x.Id == id);
             if (user == null)
             {
                 return NotFound();
             }
-            user[param] = newValue;
+            switch (param)
+            {
+                case "Name":
+                    {
+                        user.Name = newValue;
+                        break;
+                    }
+                case "Surname":
+                    {
+                        user.Surname = newValue;
+                        break;
+                    }
+                case "DateCreation":
+                    {
+                        user.DateCreation = Convert.ToDateTime(newValue);
+                        break;
+                    }
+                case "DateLastChange":
+                    {
+                        user.DateLastChange = Convert.ToDateTime(newValue);
+                        break;
+                    }
+                default:
+                    {
+                        return NotFound();
+                    }
+            }
+            await db.SaveChangesAsync();
+            return await db.Users.ToListAsync();
+        }
+
+        [HttpGet("setTask/{userId}/{taskId}")]
+        public async Task<ActionResult<IEnumerable<User>>> SetTask(int userId, int taskId)
+        {
+            User user = db.Users.FirstOrDefault(x => x.Id == userId);
+            BL.Task task = db.Tasks.FirstOrDefault(x => x.Id == taskId);
+            if (user == null || task == null)
+            {
+                return NotFound();
+            }
+            task.Executor = user;
+            await db.SaveChangesAsync();
+            return await db.Users.ToListAsync();
+        }
+
+
+
+        [HttpGet("editUser/{id}/{param}/{newValue}")]
+        public async Task<ActionResult<IEnumerable<User>>> EditUser(int id, string param, object newValue)
+        {
+            User user = db.Users.FirstOrDefault(x => x.Id == id);
+            if (user == null)
+            {
+                return NotFound();
+            }
+            switch (param)
+            {
+                case "Name":
+                    {
+                        user["Name"] = newValue;
+                        break;
+                    }
+                case "Surname":
+                    {
+                        user["Surname"] = newValue;
+                        break;
+                    }
+                case "DateCreation":
+                    {
+                        user["DateCreation"] = (DateTime) newValue;
+                        break;
+                    }
+                case "DateLastChange":
+                    {
+                        user["DateLastChange"] = (DateTime) newValue;
+                        break;
+                    }
+                default:
+                    {
+                        return NotFound();
+                    }
+            }
+           
             await db.SaveChangesAsync();
             return await db.Users.ToListAsync();
         }
