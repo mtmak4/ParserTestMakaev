@@ -13,7 +13,7 @@ namespace ParserTestMakaev.BL
         public string Description { get; set; }
         public DateTime DateCreation { get; set; }
         public DateTime DateLastChange { get; set; }
-        public enum Status { NotStarted, Processed, Done,Canceled,Disabled }
+        public string Status { get; set; } 
         public User Director { get; set; }
         public User Executor { get; set; }
 

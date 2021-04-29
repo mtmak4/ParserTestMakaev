@@ -21,8 +21,8 @@ namespace ParserTestMakaev.API.Controllers
            
         }
 
-        [HttpGet("editname/{id}/{param}/{newValue}")]
-        public async Task<ActionResult<IEnumerable<User>>> EditName(int id, string param,string newValue)
+        [HttpGet("EditUser/{id}/{param}/{newValue}")]
+        public async Task<ActionResult<IEnumerable<User>>> EditUser(int id, string param,string newValue)
         {
             User user = db.Users.FirstOrDefault(x => x.Id == id);
             if (user == null)
@@ -76,45 +76,7 @@ namespace ParserTestMakaev.API.Controllers
 
 
 
-        [HttpGet("editUser/{id}/{param}/{newValue}")]
-        public async Task<ActionResult<IEnumerable<User>>> EditUser(int id, string param, object newValue)
-        {
-            User user = db.Users.FirstOrDefault(x => x.Id == id);
-            if (user == null)
-            {
-                return NotFound();
-            }
-            switch (param)
-            {
-                case "Name":
-                    {
-                        user["Name"] = newValue;
-                        break;
-                    }
-                case "Surname":
-                    {
-                        user["Surname"] = newValue;
-                        break;
-                    }
-                case "DateCreation":
-                    {
-                        user["DateCreation"] = (DateTime) newValue;
-                        break;
-                    }
-                case "DateLastChange":
-                    {
-                        user["DateLastChange"] = (DateTime) newValue;
-                        break;
-                    }
-                default:
-                    {
-                        return NotFound();
-                    }
-            }
-           
-            await db.SaveChangesAsync();
-            return await db.Users.ToListAsync();
-        }
+       
 
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> Get()
