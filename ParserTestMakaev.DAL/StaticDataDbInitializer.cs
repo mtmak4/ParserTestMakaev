@@ -34,7 +34,30 @@ namespace ParserTestMakaev.BL
             {
                 var tasks = new List<Task>()
           {
-             new Task { Title="парсинг авито",Description="парсинг авито машины",DateCreation=DateTime.Now,DateLastChange=DateTime.Now }
+             new Task { Title="парсинг авито",Description="парсинг авито машины",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг книг",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг недвижимости",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг товаров для дома",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг одежды",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг обуви",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг электроники",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг смартфонов",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг планшетов",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг ноутбуков",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг дач",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг стройматериалов",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг продуктов питания",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг журналов",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг товаров для хобби",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг наушников",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг монет",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг купюр",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг мебели",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг штор",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг авито машины",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="товаров для хобби",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг услуг репетиторов",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
+             new Task { Title="парсинг авито",Description="парсинг ноутбуков",DateCreation=DateTime.Now,DateLastChange=DateTime.Now },
           };
                 context.Tasks.AddRange(tasks);
                 context.SaveChanges();

@@ -74,10 +74,6 @@ namespace ParserTestMakaev.API.Controllers
             return await db.Users.ToListAsync();
         }
 
-
-
-       
-
         [HttpGet]
         public async Task<ActionResult<IEnumerable<User>>> Get()
         {
@@ -93,38 +89,6 @@ namespace ParserTestMakaev.API.Controllers
             if (user == null)
                 return NotFound();
             return new ObjectResult(user);
-        }
-
-        // POST api/users
-        [HttpPost]
-        public async Task<ActionResult<User>> Post(User user)
-        {
-            if (user == null)
-            {
-                return BadRequest();
-            }
-
-            db.Users.Add(user);
-            await db.SaveChangesAsync();
-            return Ok(user);
-        }
-
-        // PUT api/users/
-        [HttpPut]
-        public async Task<ActionResult<User>> Put(User user)
-        {
-            if (user == null)
-            {
-                return BadRequest();
-            }
-            if (!db.Users.Any(x => x.Id == user.Id))
-            {
-                return NotFound();
-            }
-
-            db.Update(user);
-            await db.SaveChangesAsync();
-            return Ok(user);
         }
 
         // DELETE api/users/5
